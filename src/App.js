@@ -1,17 +1,17 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from './components';
-import { About, Contact, Home, Login, Services } from './pages';
+import { useId } from 'react';
+import { publicRoutes } from './routes';
 
 function App() {
+  const id = useId();
   return (
     <Navbar>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        {publicRoutes.map(({ path, Component }, index) => (
+          <Route key={`${id}-${index}`} path={path} element={<Component />} />
+        ))}
       </Routes>
     </Navbar>
   );

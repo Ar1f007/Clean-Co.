@@ -24,7 +24,7 @@ export const Dropdown = ({ largeDevice }) => {
           </ul>
         </li>
       ) : (
-        <li className="dropdown dropdown-right">
+        <li className="dropdown">
           <label
             tabIndex="0"
             className="btn btn-outline rounded-lg border-primary hover:btn-primary m-1"
