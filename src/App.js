@@ -1,10 +1,16 @@
 import './App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from './components';
-import { useId } from 'react';
+import { useEffect, useId } from 'react';
 import { publicRoutes } from './routes';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const id = useId();
   return (
     <Navbar>
